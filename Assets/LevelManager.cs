@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [System.Serializable]
-    private struct DataSoal
-    {
-        public Sprite hint;
-        public string pertanyaan;
-        public string judulLevel;
+    //[System.Serializable]
+    //private struct DataSoal
+    //{
+    //    public Sprite hint;
+    //    public string pertanyaan;
+    //    public string judulLevel;
 
-        public string[] jawabanTeks;
-        public bool[] adalahBenar;
-    }
+    //    public string[] jawabanTeks;
+    //    public bool[] adalahBenar;
+    //}
 
     [SerializeField]
-    private DataSoal[] _soalSoal = new DataSoal[0];
+    private PlayerProgress _playerProgress = null;
+
+    [SerializeField]
+    private LevelPackKuis _soalSoal = null;
+    //private DataSoal[] _soalSoal = new DataSoal[0];
 
     [SerializeField]
     private UI_Pertanyaan _tempatPertanyaan = null;
@@ -30,6 +34,11 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        if (!_playerProgress.MuatProgres())
+        {
+            _playerProgress.SimpanProgres();
+        }
+
         NextLevel();
     }
 
@@ -43,13 +52,15 @@ public class LevelManager : MonoBehaviour
         //startSoal = 0;
 
         //Jika index melampaui soal terakhir, ulang dari awal
-        if (_indexSoal >= _soalSoal.Length)
+        if (_indexSoal >= _soalSoal.BanyakLevel)
+        //if (_indexSoal >= _soalSoal.Length)
         {
             _indexSoal = 0;
         }
 
         //Ambil data Pertanyaan
-        DataSoal soal = _soalSoal[_indexSoal];
+        LevelSoalKuis soal = _soalSoal.AmbilLevelKe(_indexSoal);
+        //DataSoal soal = _soalSoal[_indexSoal];
 
         //Set informasi soal
         //_tempatPertanyaan.SetPertanyaan(soal.judulLevel, soal.pertanyaan, soal.hint);
@@ -59,7 +70,9 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < _tempatPilihanJawaban.Length; i++)
         {
             UI_PoinJawaban poin = _tempatPilihanJawaban[i];
-            poin.SetJawaban(soal.jawabanTeks[i], soal.adalahBenar[i]);
+            LevelSoalKuis.OpsiJawaban opsi = soal.opsiJawaban[i];
+            poin.SetJawaban(opsi.jawabanTeks, opsi.adalahBenar);
+            //poin.SetJawaban(soal.jawabanTeks[i], soal.adalahBenar[i]);
         }
     }
 
