@@ -16,6 +16,9 @@ public class LevelManager : MonoBehaviour
     //}
 
     [SerializeField]
+    private InisialDataGameplay _inisialData = null;
+
+    [SerializeField]
     private PlayerProgress _playerProgress = null;
 
     [SerializeField]
@@ -28,18 +31,51 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private UI_PoinJawaban[] _tempatPilihanJawaban = new UI_PoinJawaban[0];
 
+    [SerializeField]
+    private GameSceneManager _gameSceneManager = null;
+
+    [SerializeField]
+    private string _namaScenePilihMenu = string.Empty;
+
     private int _indexSoal = -1; //0;
     //private int startSoal = 1; //true
 
     // Start is called before the first frame update
     private void Start()
     {
-        if (!_playerProgress.MuatProgres())
-        {
-            _playerProgress.SimpanProgres();
-        }
+        //SEMENTARA
+        //if (!_playerProgress.MuatProgres())
+        //{
+        //    _playerProgress.SimpanProgres();
+        //}
+
+        _soalSoal = _inisialData.levelPack;
+        _indexSoal = _inisialData.levelIndex - 1;
 
         NextLevel();
+
+        // Subscribe events
+        UI_PoinJawaban.EventJawabSoal += UI_PoinJawaban_EventJawabSoal;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe events
+        UI_PoinJawaban.EventJawabSoal -= UI_PoinJawaban_EventJawabSoal;
+    }
+
+    private void OnApplicationQuit()
+    {
+        _inisialData.SaatKalah = false;
+    }
+
+    private void UI_PoinJawaban_EventJawabSoal(string jawaban, bool adalahBenar)
+    {
+        //throw new System.NotImplementedException();
+        if (adalahBenar)
+        {
+            _playerProgress.progresData.koin += 20;
+        }
     }
 
     public void NextLevel()
@@ -55,7 +91,9 @@ public class LevelManager : MonoBehaviour
         if (_indexSoal >= _soalSoal.BanyakLevel)
         //if (_indexSoal >= _soalSoal.Length)
         {
-            _indexSoal = 0;
+            //_indexSoal = 0;
+            _gameSceneManager.BukaScene(_namaScenePilihMenu);
+            return;
         }
 
         //Ambil data Pertanyaan

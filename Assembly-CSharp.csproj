@@ -56,14 +56,21 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LevelManager.cs" />
-    <Compile Include="Assets\PlayerProgress.cs" />
-    <Compile Include="Assets\UI_PesanLevel.cs" />
-    <Compile Include="Assets\UI_Timer.cs" />
-    <Compile Include="Assets\LevelSoalKuis.cs" />
-    <Compile Include="Assets\UI_Pertanyaan.cs" />
-    <Compile Include="Assets\UI_PoinJawaban.cs" />
-    <Compile Include="Assets\LevelPackKuis.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\PlayerProgress.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_PesanLevel.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_OpsiLevelPack.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_Timer.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_OpsiLevelKuis.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\LevelSoalKuis.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_LevelKuisList.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\GameSceneManager.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_Pertanyaan.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_LevelPackList.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_PoinJawaban.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\LevelPackKuis.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\InisialDataGameplay.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\LevelMenuDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
