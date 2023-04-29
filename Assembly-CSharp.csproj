@@ -61,27 +61,32 @@
     <Compile Include="Assets\Game Kuis\Scripts\UI_PesanLevel.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_OpsiLevelPack.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_Timer.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\InisialDataGameplay.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_OpsiLevelKuis.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\UI_MenuConfirmMessage.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\LevelSoalKuis.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_LevelKuisList.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\GameSceneManager.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_Pertanyaan.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_LevelPackList.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\LevelMenuDataManager.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\UI_PoinJawaban.cs" />
     <Compile Include="Assets\Game Kuis\Scripts\LevelPackKuis.cs" />
-    <Compile Include="Assets\Game Kuis\Scripts\InisialDataGameplay.cs" />
-    <Compile Include="Assets\Game Kuis\Scripts\LevelMenuDataManager.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Game Kuis\Scripts\PemanggilSuara.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Temporary\contohx2.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Temporary\contohx3.txt" />
     <None Include="Assets\contoh.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Temporary\contoh.txt" />
+    <None Include="Assets\Temporary\contohx.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -89,6 +94,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Temporary\contohx4.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
